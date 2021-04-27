@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">OTPApp</string>
+    <!-- Strings related to login -->
+    <string name="prompt_phone">Enter Phone Number</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Send OTP</string>
+    <string name="action_enter_otp">Enter OTP</string>
+    <string name="action_confirm_otp">Confirm OTP</string>
+    <string name="title_activity_otp">OTPActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+</resources>

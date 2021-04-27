@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".OTPActivity">
+
+    <!-- Login progress -->
+
+    <ScrollView
+        android:id="@+id/otp_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/otp_confirm_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <AutoCompleteTextView
+                    android:id="@+id/otp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/action_enter_otp"
+                    android:inputType="textPhonetic"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/show_error_otp"
+                android:textStyle="italic"
+                android:text="Enter OTP Received"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            <Button
+                android:id="@+id/phone_otp_button"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/action_confirm_otp"
+                android:textStyle="bold" />
+
+            <TextView
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/count_down_text"
+                 android:text=""/>
+
+            <!--<Button-->
+                <!--android:id="@+id/phone_otp_return"-->
+                <!--style="?android:textAppearanceSmall"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="42dp"-->
+                <!--android:text="Re-Enter Number"-->
+                <!--android:textStyle="bold"-->
+                <!--android:enabled="false"/>-->
+
+                <Button
+                    android:id="@+id/phone_otp"
+                    style="?android:textAppearanceSmall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="42dp"
+                    android:text="Re-Send OTP"
+                    android:onClick="resend_otp"
+                    android:textStyle="bold"
+                    android:visibility="gone"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
