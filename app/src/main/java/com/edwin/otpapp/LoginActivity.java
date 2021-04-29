@@ -118,9 +118,11 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<Sms> call, Response<Sms> response) {
                 int statusCode = response.code();
                 Sms sms = response.body();
-                Toast.makeText(LoginActivity.this, String.valueOf(statusCode), Toast.LENGTH_LONG).show();
+                Toast.makeText(LoginActivity.this, String.valueOf(statusCode), Toast.LENGTH_SHORT).show();
 
-                if (statusCode == 200)
+                Toast.makeText(LoginActivity.this, sms.getStatus(), Toast.LENGTH_LONG).show();
+
+                if (statusCode == 200 && !sms.getStatus().equals("failed"))
                 {
                     // MY_PREFS_NAME - a static String variable like:
                     final String MY_PREFS_NAME = "MyPrefsFile";
@@ -136,7 +138,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    Toast.makeText(LoginActivity.this, "Cant send, code is: "+String.valueOf(statusCode), Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, "Cant send SMS. Contact customer care.", Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -149,4 +151,3 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 }
-
